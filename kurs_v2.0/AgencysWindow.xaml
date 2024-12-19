@@ -1,0 +1,30 @@
+﻿<Window x:Class="kurs_v2._0.AgencysWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:kurs_v2._0"
+        mc:Ignorable="d"
+            Title="Агентства" Height="450" Loaded="Window_Loaded" ResizeMode="NoResize" Width="800">
+    <Grid>
+        <Menu VerticalAlignment="Top">
+            <MenuItem Header="Файл">
+                <MenuItem Header="Обновить" x:Name="AgencysLoad" Click="AgencysLoad_Click"></MenuItem>
+                <MenuItem Header="Назад" x:Name="AgencysBack" Click="AgencysBack_Click"></MenuItem>
+            </MenuItem>
+        </Menu>
+        <DataGrid x:Name="AgencyDG" IsReadOnly="True" AutoGenerateColumns="False" Margin="43,23,43,231">
+            <DataGrid.Columns>
+                <DataGridTextColumn Width="40" Header="Id" Binding="{Binding AgencyId}"/>
+                <DataGridTextColumn Width="200" Header="Название агенства" Binding="{Binding NameAgency}"/>
+                <DataGridTextColumn Width="300" Header="Адрес агенства" Binding="{Binding AddressAgency}"/>
+                <DataGridTextColumn Width="150" Header="Номер телефона" Binding="{Binding PhoneAgency}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="Добавить запись" x:Name="AgencysAdd" Click="AgencysAdd_Click" HorizontalAlignment="Center" Margin="0,217,0,0" VerticalAlignment="Top" Width="324"/>
+        <Button Content="Редактировать запись" x:Name="AgencysEdit" Click="AgencysEdit_Click" HorizontalAlignment="Center" Margin="0,258,0,0" VerticalAlignment="Top" Width="324"/>
+        <Button Content="Удалить запись" x:Name="AgencysDelete" Click="AgencysDelete_Click" HorizontalAlignment="Center" Margin="0,298,0,0" VerticalAlignment="Top" Width="324"/>
+        <TextBox x:Name="Tb_AgencysSearch" HorizontalAlignment="Center" Margin="0,343,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="324"/>
+        <Button Content="Поиск агенства по Id" x:Name="AgencysSearch" Click="AgencysSearch_Click" HorizontalAlignment="Center" Margin="0,381,0,0" VerticalAlignment="Top" Width="324"/>
+    </Grid>
+</Window>

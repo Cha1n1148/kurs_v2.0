@@ -1,0 +1,29 @@
+﻿<Window x:Class="kurs_v2._0.TypeTransactionsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:kurs_v2._0"
+        mc:Ignorable="d"
+            Title="Типы сделок" Height="450" Loaded="Window_Loaded" ResizeMode="NoResize" Width="500">
+    <Grid>
+        <Menu VerticalAlignment="Top">
+            <MenuItem Header="Файл">
+                <MenuItem Header="Обновить" x:Name="TypeTransactionsLoad" Click="TypeTransactionsLoad_Click"></MenuItem>
+                <MenuItem Header="Назад" x:Name="TypeTransactionsBack" Click="TypeTransactionsBack_Click"></MenuItem>
+            </MenuItem>
+        </Menu>
+        <DataGrid x:Name="TypeTransactionsDG" IsReadOnly="True" AutoGenerateColumns="False" Margin="10,23,10,260">
+            <DataGrid.Columns>
+                <DataGridTextColumn Width="100" Header="Id" Binding="{Binding TransactionTypeId}"/>
+                <DataGridTextColumn Width="100" Header="Id сделки" Binding="{Binding Transactions.TransactionsId}"/>
+                <DataGridTextColumn Width="100" Header="Тип сделки" Binding="{Binding TypeName}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="Добавить запись" x:Name="TypeTransactionsAdd" Click="TypeTransactionsAdd_Click" HorizontalAlignment="Center" Margin="0,217,0,0" VerticalAlignment="Top" Width="392"/>
+        <Button Content="Редактировать запись" x:Name="TypeTransactionsEdit" Click="TypeTransactionsEdit_Click" HorizontalAlignment="Center" Margin="0,258,0,0" VerticalAlignment="Top" Width="392"/>
+        <Button Content="Удалить запись" x:Name="TypeTransactionsDelete" Click="TypeTransactionsDelete_Click" HorizontalAlignment="Center" Margin="0,298,0,0" VerticalAlignment="Top" Width="392"/>
+        <TextBox x:Name="Tb_TypeTransactionsSearch" HorizontalAlignment="Center" Margin="0,343,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="392"/>
+        <Button Content="Поиск агенства по Id" x:Name="TypeTransactionSearch" Click="TypeTransactionSearch_Click" HorizontalAlignment="Center" Margin="0,381,0,0" VerticalAlignment="Top" Width="392"/>
+    </Grid>
+</Window>

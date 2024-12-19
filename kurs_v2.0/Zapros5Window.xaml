@@ -1,0 +1,26 @@
+﻿<Window x:Class="kurs_v2._0.Zapros5Window"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:kurs_v2._0"
+        mc:Ignorable="d"
+            Title="Представление 5" Loaded="Window_Loaded" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Height="350" Width="500">
+    <Grid>
+        <Menu VerticalAlignment="Top">
+            <MenuItem Header="Файл">
+                <MenuItem Header="Обновить" x:Name="Zapros5Load" Click="Zapros5Load_Click"></MenuItem>
+                <MenuItem Header="Информация" x:Name="info_zapros5" Click="info_zapros5_Click"></MenuItem>
+            </MenuItem>
+        </Menu>
+        <DataGrid x:Name="DGzapros5" IsReadOnly="True" AutoGenerateColumns="False" Margin="51,18,41,129">
+            <DataGrid.Columns>
+                <DataGridTextColumn Width="135" Header="Имя агентства" Binding="{Binding NameAgency}"/>
+                <DataGridTextColumn Width="50" Header="Месяц" Binding="{Binding Month}"/>
+                <DataGridTextColumn Width="50" Header="Год" Binding="{Binding Year}"/>
+                <DataGridTextColumn Width="120" Header="Общая сумма" Binding="{Binding TotalAmount}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="Назад" x:Name="zapros5_back" Click="zapros5_back_Click" HorizontalAlignment="Left" Margin="171,233,0,0" VerticalAlignment="Top" Height="49" Width="168"/>
+    </Grid>
+</Window>

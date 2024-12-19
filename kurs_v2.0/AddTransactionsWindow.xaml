@@ -1,0 +1,23 @@
+﻿<Window x:Class="kurs_v2._0.AddTransactionsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:kurs_v2._0"
+        mc:Ignorable="d"
+            Title="AddTransactionsWindow" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded" Height="400" Width="200">
+    <Grid>
+        <Label Content="Дата сделки:" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Width="180"/>
+        <Label Content="Сумма сделки:" HorizontalAlignment="Center" Margin="0,73,0,0" VerticalAlignment="Top" Width="180"/>
+        <TextBox PreviewTextInput="Tb_add_price_transaction_PreviewTextInput" MaxLength="10"  x:Name="Tb_add_price_transaction" HorizontalAlignment="Center" TextWrapping="Wrap" Text="{Binding AmountTransaction}" VerticalAlignment="Top" Width="180" Margin="0,104,0,0"/>
+        <Button Content="Добавить" x:Name="Add_edit_transaction" Click="Add_edit_transaction_Click" HorizontalAlignment="Center" Margin="0,302,0,0" VerticalAlignment="Top" Width="180"/>
+        <Button Content="Назад" x:Name="Add_transaction_exit" Click="Add_transaction_exit_Click" HorizontalAlignment="Center" Margin="0,335,0,0" VerticalAlignment="Top" Width="180" Height="19" RenderTransformOrigin="0.5,0.5"/>
+        <DatePicker x:Name="Dp_add_data_transaction" Text="{Binding Path=TransactionDate}" HorizontalAlignment="Center" Margin="0,44,0,0" VerticalAlignment="Top" Width="180"/>
+        <Label Content="Id клиента" HorizontalAlignment="Center" Margin="0,127,0,0" VerticalAlignment="Top" Width="180"/>
+        <Label Content="Id недвижимости" HorizontalAlignment="Center" Margin="0,181,0,0" VerticalAlignment="Top" Width="180"/>
+        <Label Content="Id агенства" HorizontalAlignment="Center" Margin="0,235,0,0" VerticalAlignment="Top" Width="180"/>
+        <ComboBox x:Name="cb_add_client_transaction" Text="{Binding ClientsId}" HorizontalAlignment="Center" Margin="0,158,0,0" VerticalAlignment="Top" Width="180"/>
+        <ComboBox x:Name="cb_add_property_transaction" Text="{Binding PropertyId}" HorizontalAlignment="Center" Margin="0,212,0,0" VerticalAlignment="Top" Width="180"/>
+        <ComboBox x:Name="cb_add_agency_transaction" Text="{Binding AgencyId}" HorizontalAlignment="Center" Margin="0,266,0,0" VerticalAlignment="Top" Width="180"/>
+    </Grid>
+</Window>

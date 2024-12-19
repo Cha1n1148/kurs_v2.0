@@ -1,0 +1,32 @@
+﻿<Window x:Class="kurs_v2._0.ClientsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:kurs_v2._0"
+        mc:Ignorable="d"
+      Title="Клиенты" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Height="450" Loaded="Window_Loaded" Width="800">
+    <Grid>
+        <Menu VerticalAlignment="Top">
+            <MenuItem Header="Файл">
+                <MenuItem Header="Обновить" x:Name="ClientsLoad" Click="ClientsLoad_Click"></MenuItem>
+                <MenuItem Header="Назад" x:Name="ClientBack" Click="ClientBack_Click"></MenuItem>
+            </MenuItem>
+        </Menu>
+        <DataGrid x:Name="ClientsDG" IsReadOnly="True" AutoGenerateColumns="False" Margin="20,23,20,242">
+            <DataGrid.Columns>
+                <DataGridTextColumn Width="40" Header="Id" Binding="{Binding ClientsId}"/>
+                <DataGridTextColumn Width="90" Header="Имя" Binding="{Binding FirstName}"/>
+                <DataGridTextColumn Width="90" Header="Отчество" Binding="{Binding MiddleName}"/>
+                <DataGridTextColumn Width="90" Header="Фамилия" Binding="{Binding LastName}"/>
+                <DataGridTextColumn Width="120" Header="Номер телефона" Binding="{Binding PhoneNumber}"/>
+                <DataGridTextColumn Width="180" Header="Эл.почта" Binding="{Binding Email}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="Добавить запись" x:Name="ClientsAdd" Click="ClientsAdd_Click" HorizontalAlignment="Center" Margin="0,217,0,0" VerticalAlignment="Top" Width="324"/>
+        <Button Content="Редактировать запись" x:Name="ClientsEdit" Click="ClientsEdit_Click" HorizontalAlignment="Center" Margin="0,258,0,0" VerticalAlignment="Top" Width="324"/>
+        <Button Content="Удалить запись" x:Name="ClientsDelete" Click="ClientsDelete_Click" HorizontalAlignment="Center" Margin="0,298,0,0" VerticalAlignment="Top" Width="324"/>
+        <TextBox x:Name="Tb_ClientsSearch" HorizontalAlignment="Center" Margin="0,343,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="324"/>
+        <Button Content="Поиск клиента по Id" x:Name="ClientsSearch" Click="ClientsSearch_Click" HorizontalAlignment="Center" Margin="0,381,0,0" VerticalAlignment="Top" Width="324"/>
+    </Grid>
+</Window>

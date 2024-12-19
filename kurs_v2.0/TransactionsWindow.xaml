@@ -1,0 +1,32 @@
+﻿<Window x:Class="kurs_v2._0.TransactionsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:kurs_v2._0"
+        mc:Ignorable="d"
+            Title="Сделки" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded" Height="450" Width="800">
+    <Grid>
+        <Menu VerticalAlignment="Top">
+            <MenuItem Header="Файл">
+                <MenuItem Header="Обновить" x:Name="TransactionsLoad" Click="TransactionsLoad_Click"></MenuItem>
+                <MenuItem Header="Назад" x:Name="TransactionsBack" Click="TransactionsBack_Click"></MenuItem>
+            </MenuItem>
+        </Menu>
+        <DataGrid x:Name="TransactionDG" IsReadOnly="True" AutoGenerateColumns="False" Margin="43,23,43,231">
+            <DataGrid.Columns>
+                <DataGridTextColumn Width="75" Header="Id сделки" Binding="{Binding TransactionsId}"/>
+                <DataGridTextColumn Width="120" Header="Id недвижимости" Binding="{Binding PropertyId}"/>
+                <DataGridTextColumn Width="85" Header="Id клиента" Binding="{Binding ClientsId}"/>
+                <DataGridTextColumn Width="85" Header="Id агенства" Binding="{Binding AgencyId}"/>
+                <DataGridTextColumn Width="150" Header="Дата сделки" Binding="{Binding TransactionDate}"/>
+                <DataGridTextColumn Width="115" Header="Cумма сделки" Binding="{Binding AmountTransaction}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="Добавить запись" x:Name="TransactionsAdd" Click="TransactionsAdd_Click" HorizontalAlignment="Center" Margin="0,217,0,0" VerticalAlignment="Top" Width="324"/>
+        <Button Content="Редактировать запись" x:Name="TransactionsEdit" Click="TransactionsEdit_Click" HorizontalAlignment="Center" Margin="0,258,0,0" VerticalAlignment="Top" Width="324"/>
+        <Button Content="Удалить запись" x:Name="TransactionsDelete" Click="TransactionsDelete_Click" HorizontalAlignment="Center" Margin="0,298,0,0" VerticalAlignment="Top" Width="324"/>
+        <TextBox x:Name="Tb_TransactionsSearch" HorizontalAlignment="Center" Margin="0,343,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="324"/>
+        <Button Content="Поиск сделки по Id" x:Name="TransactionsSearch" Click="TransactionsSearch_Click" HorizontalAlignment="Center" Margin="0,381,0,0" VerticalAlignment="Top" Width="324"/>
+    </Grid>
+</Window>
